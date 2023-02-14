@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-phpicker" version="1.0.0">
+    <name>PHPicker Cordova Plugin</name>
+    <description>Select Photos using the new PHPicker picker for iOS 14 and later</description>
+    <repo>https://github.com/echonox/cordova-plugin-phpicker.git</repo>
+    <license>Apache 2.0</license>
+    <author>Angjelko Miloshevski</author>
+    <keywords>cordova,phpicker,photos,images,picker</keywords>
+    <js-module src="www/phpicker.js" name="PHPicker">
+        <clobbers target="PHPicker" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PHPicker">
+                <param name="ios-package" value="CDVPHPicker"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/CDVPHPicker.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    </platform>
+</plugin>
